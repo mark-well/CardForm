@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Add new card</title>
+	<link rel="shortcut icon" href="favicon.ico"/>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="style.css" type="text/css" media="all" />
+</head>
+<body>
+	<div class="container">
+		<h1 class="title">Add New Card</h1>
+		<p>(Question)</p>
+		<form class="form" action="/addNewCard" method="post" accept-charset="utf-8">
+			<label for="question">QUESTION: </label>
+			<textarea type="text" name="question" id="question" value="" placeholder="Question" required/></textarea>
+			<br>
+			
+			<label for="optionA">Option A: </label>
+			<input type="text" name="optionA" id="optionA" value="" placeholder="Option A" required/>
+			<br>
+			
+			<label for="optionB">Option B: </label>
+			<input type="text" name="optionB" id="optionB" value="" placeholder="Option B" required/>
+			<br>
+			
+			<label for="optionC">Option C: </label>
+			<input type="text" name="optionC" id="optionC" value="" placeholder="Option C" required/>
+			<br>
+			
+			<label for="optionD">Option D: </label>
+			<input type="text" name="optionD" id="optionD" value="" placeholder="Option D" required/>
+			<br>
+			
+			<label for="correctAnswer">Correct Answer: </label>
+			<input type="text" name="correctAnswer" id="correctAnswer" value="" placeholder="Correct Answer (e.g. 'C. Apple')" required/>
+			<br>
+			
+			<label for="explanation">Explanation: </label>
+			<textarea name="explanation" id=explanation rows="5" cols="30" placeholder="Explanation" required></textarea>
+			<input class="submit" type="submit" id="submit" value="SUBMIT" />
+		</form>
+		<p class="note">Note: Make sure to follow this format when placing the correct answer, [letter]. [answer] — Example: "A. Bagang".</p>
+		<p class="credit">Created By: Merto, Mark Well</p>
+	</div>
+</body>
+</html>
