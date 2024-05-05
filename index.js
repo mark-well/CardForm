@@ -39,6 +39,13 @@ app.post("/addNewCard", (req, res) => {
 	res.redirect("/cardSuccess.html");
 });
 
+app.get("/api", (req, res) => {
+	res.send({
+		"Name": "Mike",
+		"Sticker": "🐧"
+	})
+});
+
 app.listen(PORT, ()=> {
 	console.log(`Server running on port ${PORT}`);
 });
