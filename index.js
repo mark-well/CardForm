@@ -47,6 +47,21 @@ app.get("/api", (req, res) => {
 	});
 });
 
+app.post("/delete", (req, res) => {
+	let data = req.body;
+	let id = data._id;
+	
+	database.remove({_id: `${id}`}, {}, (error, numRemoved) => {
+		if(error) {
+			console.log(error);
+			return;
+		}
+		
+		console.log(`Removed item: ${id}`);
+	})
+	res.sendStatus(200);
+});
+
 app.listen(PORT, ()=> {
 	console.log(`Server running on port ${PORT}`);
 });
