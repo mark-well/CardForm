@@ -35,15 +35,16 @@ app.post("/addNewCard", (req, res) => {
 	console.log("\nNew card added");
 	console.log(JSON.stringify(data) + "\n");
 	//exec("termux-vibrate -f -d 500");
-	exec(`termux-notification --title "New card was added"`);
+	//exec(`termux-notification --title "New card was added"`);
 	res.redirect("/cardSuccess.html");
 });
 
 app.get("/api", (req, res) => {
-	res.send({
-		"Name": "Mike",
-		"Sticker": "🐧"
-	})
+	let dataFromDatabase = [];
+	database.find({}, (error, data) => {
+		dataFromDatabase = data;
+		res.send(dataFromDatabase.reverse());
+	});
 });
 
 app.listen(PORT, ()=> {
